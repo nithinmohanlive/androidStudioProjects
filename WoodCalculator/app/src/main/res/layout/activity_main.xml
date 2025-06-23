@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/buttonGenerateNewBill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GENERATE NEW BILL"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/buttonGenerateBill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GENERATE BILL"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/mainScrollView" android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/tableContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:divider="?android:attr/dividerHorizontal"
+            android:showDividers="middle"
+            android:background="@drawable/table_border">
+        </LinearLayout>
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/totalVolumeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Volume: 0.0 CFT"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:paddingEnd="8dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/grandTotalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grand Total: Rs. 0.00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        android:layout_gravity="end"
+        android:paddingEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp">
+
+        <EditText
+            android:id="@+id/editTextLength"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Length (ft)"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextGirth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Girth (in)"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD" />
+
+    </LinearLayout>
+</LinearLayout>

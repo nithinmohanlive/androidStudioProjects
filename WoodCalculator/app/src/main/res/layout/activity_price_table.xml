@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".PriceTableActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Girth Ranges (inches, comma-separated start-end):"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/editTextGirthRanges"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., 0-18, 18-20, 20-30 (Numbers must be >=0. Contiguous ranges recommended.)"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Length Values (feet, comma-separated numbers):"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/editTextLengthValues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., 5, 8, 10, 12, 16 (Numbers must be >0)"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/buttonGenerateTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Generate/Update Price Table"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unit Price Table (Tap a cell to edit):"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableLayout
+                    android:id="@+id/priceTableLayout"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:stretchColumns="*"> </TableLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
