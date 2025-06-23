@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true">
 
+    <!-- Top Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp">
 
         <Button
             android:id="@+id/buttonGenerateNewBill"
@@ -21,21 +24,41 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="GENERATE NEW BILL"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/buttonGenerateBill"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="GENERATE BILL"/>
+            android:text="GENERATE BILL" />
     </LinearLayout>
 
+    <!-- Fixed Table Header -->
+    <TableLayout
+        android:id="@+id/tableHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ADD8E6">
+
+        <TableRow>
+            <TextView android:text="Sl. No." style="@style/TableHeaderCell"/>
+            <TextView android:text="Length (ft)" style="@style/TableHeaderCell"/>
+            <TextView android:text="Girth (in)" style="@style/TableHeaderCell"/>
+            <TextView android:text="Volume (cft)" style="@style/TableHeaderCell"/>
+            <TextView android:text="Unit Price" style="@style/TableHeaderCell"/>
+            <TextView android:text="Total" style="@style/TableHeaderCell"/>
+        </TableRow>
+    </TableLayout>
+
+    <!-- Scrollable Body -->
     <ScrollView
-        android:id="@+id/mainScrollView" android:layout_width="match_parent"
+        android:id="@+id/mainScrollView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:fillViewport="true">
+
         <LinearLayout
             android:id="@+id/tableContainer"
             android:layout_width="match_parent"
@@ -44,11 +67,10 @@
             android:padding="2dp"
             android:divider="?android:attr/dividerHorizontal"
             android:showDividers="middle"
-            android:background="@drawable/table_border">
-        </LinearLayout>
+            android:background="@drawable/table_border" />
     </ScrollView>
 
-
+    <!-- Totals -->
     <TextView
         android:id="@+id/totalVolumeTextView"
         android:layout_width="wrap_content"
@@ -58,7 +80,7 @@
         android:textStyle="bold"
         android:layout_gravity="end"
         android:paddingEnd="8dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/grandTotalTextView"
@@ -71,8 +93,9 @@
         android:layout_gravity="end"
         android:paddingEnd="8dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
+    <!-- Input Fields -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,7 +111,7 @@
             android:hint="Length (ft)"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp" />
 
         <EditText
             android:id="@+id/editTextGirth"
@@ -98,13 +121,13 @@
             android:hint="Girth (in)"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/buttonCalculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ADD" />
-
     </LinearLayout>
+
 </LinearLayout>

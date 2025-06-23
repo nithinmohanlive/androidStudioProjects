@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ViewBillsActivity">
+    tools:context=".ViewBillsActivity"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +14,9 @@
         android:text="Search Bills"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="15dp"/>
+
 
     <EditText
         android:id="@+id/editTextSearchClientName"

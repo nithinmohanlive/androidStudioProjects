@@ -179,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         // Initialize SharedPreferences and Gson for data persistence
         sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         gson = new Gson();
@@ -258,14 +260,9 @@ public class MainActivity extends AppCompatActivity {
      * Clears the current UI table and repopulates it with entries from `logEntries` list.
      */
     private void repopulateTable() {
-        tableContainer.removeAllViews(); // Remove all existing rows
-        // Add header only if there are entries to display
-        if (!logEntries.isEmpty()) {
-            addTableHeader();
-        }
-        // Add each log entry to the UI table
+        tableContainer.removeAllViews();
         for (int i = 0; i < logEntries.size(); i++) {
-            addEntryToTableUI(logEntries.get(i), i + 1, i); // Pass Sl. No. (1-based) and actual index (0-based)
+            addEntryToTableUI(logEntries.get(i), i + 1, i);
         }
     }
 
@@ -515,25 +512,6 @@ public class MainActivity extends AppCompatActivity {
         // Clear input fields for next entry
         editTextGirth.setText("");
         editTextLength.setText("");
-    }
-
-    /**
-     * Adds the table header row to the UI table.
-     */
-    private void addTableHeader() {
-        TableRow headerRow = new TableRow(this);
-        headerRow.setBackgroundColor(Color.parseColor("#ADD8E6")); // Light blue background
-        headerRow.setPadding(0, 8, 0, 8);
-
-        // Add header TextViews in the specified order
-        headerRow.addView(createTableHeaderTextView("Sl. No."));
-        headerRow.addView(createTableHeaderTextView("Length (ft)"));
-        headerRow.addView(createTableHeaderTextView("Girth (in)"));
-        headerRow.addView(createTableHeaderTextView("Volume (cft)"));
-        headerRow.addView(createTableHeaderTextView("Unit Price"));
-        headerRow.addView(createTableHeaderTextView("Total"));
-
-        tableContainer.addView(headerRow);
     }
 
     /**
